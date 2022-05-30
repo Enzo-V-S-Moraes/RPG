@@ -244,6 +244,8 @@ void main()
 	printf("##     ## ##   ##   ######### ##    ##  ##     ## ##  ####            ##    ##     ## ######### ##  #### ##       \n");
 	printf("##     ## ##    ##  ##     ## ##    ##  ##     ## ##   ###      ##    ##    ##     ## ##     ## ##   ### ##       \n");
 	printf("########  ##     ## ##     ##  ######    #######  ##    ##       ######     ########  ##     ## ##    ## ######## \n");
+	printf("                                                                                                            v0.0.2\n");
+	printf("                                                                                 (Recomendado jogar em tela cheia)\n");
 	printf("1) jogar o jogo\n");
 	printf("2) lore\n");
 	printf("3) sair\n");
@@ -417,7 +419,7 @@ void jogo()
 	system("cls");
 	printf(" Voce e o heroi das historias\n");
 	printf(" Voce matou Belugha\n");
-	printf(" Voce e a ruina");
+	printf(" Voce e a ruina\n");
 	printf(" E voce sabe muito bem o que deve ser feito...\n");
 	printf(" Voce caminha ate o castelo no pico mais alto das terras pestiferas\n");
 	system("pause");
@@ -444,21 +446,21 @@ void combate1(PERSONAGEM personagem)
 {
 	//Definindo os stats dos possiveis monstros do primeiro encontro
 	MONSTRO goblin;
-	goblin.forca=2;
-	goblin.hp=18;
-	goblin.armadura=2;
+	goblin.forca=4;
+	goblin.hp=21;
+	goblin.armadura=3;
 	goblin.agilidade=3;
 	
 	MONSTRO esqueleto;
-	esqueleto.forca=3;
+	esqueleto.forca=6;
 	esqueleto.hp=20;
-	esqueleto.armadura=1;
+	esqueleto.armadura=2;
 	esqueleto.agilidade=2;
 	
 	MONSTRO rato;
-	rato.forca=2;
-	rato.hp=17;
-	rato.armadura=2;
+	rato.forca=4;
+	rato.hp=24 ;
+	rato.armadura=1;
 	rato.agilidade=4;
 	
 	int jg;//Variavel de controle para Jogar De novo
@@ -1586,18 +1588,18 @@ void combate2(PERSONAGEM personagem)
 {
 	//Definindo os stats dos possiveis monstros do primeiro encontro
 	MONSTRO draconato;
-	draconato.forca=12;
-	draconato.hp=45;
+	draconato.forca=15;
+	draconato.hp=62;
 	draconato.armadura=7;
 	draconato.agilidade=7;
 	
 	MONSTRO armadura;
-	armadura.forca=14;
-	armadura.hp=39;
-	armadura.armadura=9;
+	armadura.forca=12;
+	armadura.hp=65;
+	armadura.armadura=10;
 	armadura.agilidade=5;
 	
-	int jg;//Variavel de controle para Jogar De novo
+	int jg;
 	int i, ai, encontro;
 	int defesaj = 0, defesai = 0;
 	int pocao = 0, pocaoi = 0;
@@ -1632,7 +1634,7 @@ void combate2(PERSONAGEM personagem)
 				switch(ai)//Acao do draconato decidida aleatoriamente
 				{
 					case 0:
-						danoi = rand()%8+1+draconato.forca;
+						danoi = rand()%8+rand()%4+2+draconato.forca;
 						if(danoi < personagem.armadura.defesa)
 						{
 							printf("O draconato ataca!\nMas parece nao surtir efeito!\n");
@@ -1893,7 +1895,7 @@ void combate2(PERSONAGEM personagem)
 				switch(ai)//Acao do draconato decidida aleatoriamente
 				{
 					case 0:
-						danoi = rand()%8+1+draconato.forca;
+						danoi = rand()%8+rand()%4+2+draconato.forca;
 						if(danoi < personagem.armadura.defesa)
 						{
 							printf("O draconato ataca!\nMas parece nao surtir efeito!\n");
@@ -2002,7 +2004,7 @@ void combate2(PERSONAGEM personagem)
 				switch(ai)
 				{
 					case 0:
-						danoi = rand()%8+1+armadura.forca;
+						danoi = rand()%8+rand()%4+2+armadura.forca;
 						if(danoi < personagem.armadura.defesa)
 						{
 							printf("O armadura ataca!\nMas parece nao surtir efeito!\n");
@@ -2262,7 +2264,7 @@ void combate2(PERSONAGEM personagem)
 				switch(ai)
 				{
 					case 0:
-						danoi = rand()%8+1+armadura.forca;
+						danoi = rand()%8+rand()%4+2+armadura.forca;
 						if(danoi < personagem.armadura.defesa)
 						{
 							printf("O armadura ataca!\nMas parece nao surtir efeito!\n");
@@ -2360,7 +2362,7 @@ void combate3(PERSONAGEM personagem)
 	//Definindo os stats dos possiveis monstros do primeiro encontro
 	MONSTRO sckhar;
 	sckhar.forca=23;
-	sckhar.hp=200;
+	sckhar.hp=275;
 	sckhar.armadura=15;
 	sckhar.agilidade=10;
 	
@@ -2402,7 +2404,7 @@ void combate3(PERSONAGEM personagem)
 				switch(ai)//Acao do sckhar decidida aleatoriamente
 				{
 					case 0:
-						danoi = rand()%8+1+sckhar.forca;
+						danoi = rand()%8+rand()%6+2+sckhar.forca;
 						if(danoi < personagem.armadura.defesa)
 						{
 							printf("O sckhar ataca!\nMas parece nao surtir efeito!\n");
@@ -2663,7 +2665,7 @@ void combate3(PERSONAGEM personagem)
 				switch(ai)//Acao do sckhar decidida aleatoriamente
 				{
 					case 0:
-						danoi = rand()%8+1+sckhar.forca;
+						danoi = rand()%8+rand()%6+2+sckhar.forca;
 						if(danoi < personagem.armadura.defesa)
 						{
 							printf("O sckhar ataca!\nMas parece nao surtir efeito!\n");
@@ -2825,7 +2827,7 @@ void criacao(PERSONAGEM *personagem, ARMAS *armas, ARMADURAS *armaduras)
     	case 1:
     		printf("Escolha uma arma:\n");
     		printf("1) Espada curta        2) Rapieira        3) Lanca\n");
-    		printf("   ATQ: 5                 ATQ: 3             ATQ: 3\n");
+    		printf("   ATQ: 4                 ATQ: 4             ATQ: 5\n");
     		printf("   Dado: 1d12             Dado: 2d6+1d4      Dado: 1d10+1d4\n");
     		printf("   FOR: A                 FOR: -             FOR: C\n");
     		printf("   DES: -                 DES: B             DES: C\n");
@@ -2834,15 +2836,15 @@ void criacao(PERSONAGEM *personagem, ARMAS *armas, ARMADURAS *armaduras)
     		switch(ea)
     		{
     			case 1:
-    				personagem->arma.dano = 5+(personagem->forca+(personagem->forca/2));
+    				personagem->arma.dano = 4+(personagem->forca+(personagem->forca/2));
     				personagem->arma.dado = 1;//Numero usado pra armazenar o dado de dano que a arma usa
     				break;
     			case 2:
-    				personagem->arma.dano = 3+personagem->destreza;
+    				personagem->arma.dano = 4+personagem->destreza;
     				personagem->arma.dado = 2;
     				break;
     			case 3:
-    				personagem->arma.dano = 3+(personagem->destreza/2)+(personagem->forca/2);
+    				personagem->arma.dano = 5+(personagem->destreza/2)+(personagem->forca/2);
     				personagem->arma.dado = 3;
     				break;
 			}
@@ -2941,7 +2943,7 @@ void levelup1(PERSONAGEM *personagem, ARMAS *armas, ARMADURAS *armaduras)
     	case 2:
     		printf("Escolha uma nova arma:\n");
     		printf("1) Espada longa        2) Tachi           3) Alfange\n");
-    		printf("   ATQ: 10                ATQ: 9             ATQ: 7\n");
+    		printf("   ATQ: 10                ATQ: 10            ATQ: 11\n");
     		printf("   Dado: 1d12             Dado: 2d6+1d4      Dado: 1d10+1d4\n");
     		printf("   FOR: A                 FOR: -             FOR: C\n");
     		printf("   DES: -                 DES: B             DES: C\n");
@@ -2954,11 +2956,11 @@ void levelup1(PERSONAGEM *personagem, ARMAS *armas, ARMADURAS *armaduras)
     				personagem->arma.dado = 1;
     				break;
     			case 2:
-    				personagem->arma.dano = 9+personagem->destreza;
+    				personagem->arma.dano = 10+personagem->destreza;
     				personagem->arma.dado = 2;
     				break;
     			case 3:
-    				personagem->arma.dano = 7+(personagem->destreza/2)+(personagem->forca/2);
+    				personagem->arma.dano = 11+(personagem->destreza/2)+(personagem->forca/2);
     				personagem->arma.dado = 3;
     				break;
 			}
@@ -3063,7 +3065,7 @@ void levelup2(PERSONAGEM *personagem, ARMAS *armas, ARMADURAS *armaduras)
     	case 2:
     		printf("Escolha uma nova arma:\n");
     		printf("1) Espada-Deus         2) Foice            3) Glaive\n");
-    		printf("   ATQ: 19                ATQ: 18             ATQ: 17\n");
+    		printf("   ATQ: 19                ATQ: 20             ATQ: 22\n");
     		printf("   Dado: 1d12             Dado: 2d6+1d4       Dado: 1d10+1d4\n");
     		printf("   FOR: A                 FOR: -              FOR: C\n");
     		printf("   DES: -                 DES: B              DES: C\n");
@@ -3076,11 +3078,11 @@ void levelup2(PERSONAGEM *personagem, ARMAS *armas, ARMADURAS *armaduras)
     				personagem->arma.dado = 1;
     				break;
     			case 2:
-    				personagem->arma.dano = 18+personagem->destreza;
+    				personagem->arma.dano = 20+personagem->destreza;
     				personagem->arma.dado = 2;
     				break;
     			case 3:
-    				personagem->arma.dano = 17+(personagem->destreza/2)+(personagem->forca/2);
+    				personagem->arma.dano = 22+(personagem->destreza/2)+(personagem->forca/2);
     				personagem->arma.dado = 3;
     				break;
 			}
@@ -3101,17 +3103,17 @@ void levelup2(PERSONAGEM *personagem, ARMAS *armas, ARMADURAS *armaduras)
 			switch(em)
     		{
     			case 1:
-    				personagem->armadura.defesa = 4+(personagem->constituicao+(personagem->constituicao/2));
-    				personagem->agilidade+=2;
+    				personagem->armadura.defesa = 8+(personagem->constituicao+(personagem->constituicao/2));
+    				personagem->agilidade+=5;
     				personagem->destreza+=2;
     				break;
     			case 2:
-    				personagem->armadura.defesa = 6+(personagem->constituicao+(personagem->constituicao/2));
+    				personagem->armadura.defesa = 13+(personagem->constituicao+(personagem->constituicao/2));
     				personagem->constituicao+=2;
 					break;
     			case 3:
-    				personagem->armadura.defesa = 9+(personagem->constituicao+(personagem->constituicao/2));
-    				personagem->agilidade-=2;
+    				personagem->armadura.defesa = 20+(personagem->constituicao+(personagem->constituicao/2));
+    				personagem->agilidade-=6;
     				personagem->forca+=3;
     				break;
 			}
